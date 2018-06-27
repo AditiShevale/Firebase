@@ -231,7 +231,9 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-                photRef.putFile(selectedImageUri).addOnSuccessListener(this, new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                photRef.putFile(selectedImageUri)
+
+                        .addOnSuccessListener(this, new OnSuccessListener<UploadTask.TaskSnapshot>() {
                     @Override
                     public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
 
@@ -247,6 +249,12 @@ public class MainActivity extends AppCompatActivity {
 
                             }
                         });
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(MainActivity.this, "Failed to upload !!", Toast.LENGTH_SHORT).show();
+
                     }
                 });
 
