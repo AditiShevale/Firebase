@@ -78,8 +78,9 @@ public class MainActivity extends AppCompatActivity {
     private ChildEventListener mChildEventListener;
     private FirebaseAuth mFirebaseAuth;
     private FirebaseAuth.AuthStateListener mAuthStateListener;
+
     private FirebaseStorage mFirebaseStorage;
-    private StorageReference mChatPhotoStorageReference;
+    private StorageReference mChatPhotosStorageReference;
 
 
     @Override
@@ -89,14 +90,19 @@ public class MainActivity extends AppCompatActivity {
 
         mUsername = ANONYMOUS;
 
-        mFirebaseDatabase = FirebaseDatabase.getInstance();
+
         mFirebaseAuth = FirebaseAuth.getInstance();
+        mFirebaseDatabase = FirebaseDatabase.getInstance();
         mFirebaseStorage = FirebaseStorage.getInstance();
+
 
         mMessagesDatabaseReference = mFirebaseDatabase.getReference()
                 .child("messages");
-        mChatPhotoStorageReference = mFirebaseStorage.getReference()
-                .child("Pics");
+
+
+
+        mChatPhotosStorageReference = mFirebaseStorage.getReference().child("chat_photos");
+
 
         // Initialize references to views
         mProgressBar = (ProgressBar) findViewById(R.id.progressBar);
@@ -220,7 +226,7 @@ public class MainActivity extends AppCompatActivity {
 
                 //    Get a reference to store file at chat_photo
                 final StorageReference photRef =
-                        mChatPhotoStorageReference.child(selectedImageUri
+                        mChatPhotosStorageReference.child(selectedImageUri
                                 .getLastPathSegment());
 
 
