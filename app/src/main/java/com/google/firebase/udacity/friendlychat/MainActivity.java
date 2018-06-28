@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
         mFirebaseDatabase = FirebaseDatabase.getInstance();
         mFirebaseStorage = FirebaseStorage.getInstance();
 
-
+        Toast.makeText(this, "Hello", Toast.LENGTH_SHORT).show();
         mMessagesDatabaseReference = mFirebaseDatabase.getReference()
                 .child("messages");
 
