@@ -261,19 +261,6 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
 
-                //   Upload file to Firebase Storage
-               /*photRef.putFile(selectedImageUri).addOnSuccessListener(this,
-                       new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                           @Override
-                           public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                               @SuppressWarnings("VisibleForTests")Uri downloadurl =
-                                       taskSnapshot.getDownloadUrl();
-                               FriendlyMessage friendlyMessage = new
-                                       FriendlyMessage(null,mUsername,downloadurl.toString());
-                               mMessagesDatabaseReference.push().setValue(friendlyMessage);
-                           }
-                       });
-*/
 
             }
         }
