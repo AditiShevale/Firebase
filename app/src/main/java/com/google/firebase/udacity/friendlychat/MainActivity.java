@@ -217,12 +217,15 @@ public class MainActivity extends AppCompatActivity {
         if (requestCode == RC_SIGN_IN){
             if (requestCode ==RESULT_OK){
                 Toast.makeText(this, "Sign In", Toast.LENGTH_SHORT).show();
-            }else if (resultCode == RESULT_CANCELED){
+
+            }
+            else if (resultCode == RESULT_CANCELED){
                 Toast.makeText(this, "Sign in Canceled", Toast.LENGTH_SHORT).show();
                 finish();
 
 
-            }else  if (requestCode ==RC_PHOTO_PICKER && resultCode == RESULT_OK){
+            }
+            else  if (requestCode ==RC_PHOTO_PICKER && resultCode == RESULT_OK){
                 Uri selectedImageUri = data.getData();
 
                 //    Get a reference to store file at chat_photo
@@ -234,7 +237,7 @@ public class MainActivity extends AppCompatActivity {
 
                 photRef.putFile(selectedImageUri)
 
-                        .addOnSuccessListener(this, new OnSuccessListener<UploadTask.TaskSnapshot>() {
+               .addOnSuccessListener(this, new OnSuccessListener<UploadTask.TaskSnapshot>() {
                     @Override
                     public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
 
@@ -243,7 +246,7 @@ public class MainActivity extends AppCompatActivity {
                             public void onSuccess(Uri uri) {
 
                                 Uri downloadurl=uri;
-                                Log.e(TAG, downloadurl.toString());
+
                                 FriendlyMessage friendlyMessage = new
                                         FriendlyMessage(null,mUsername,
                                         downloadurl.toString());
