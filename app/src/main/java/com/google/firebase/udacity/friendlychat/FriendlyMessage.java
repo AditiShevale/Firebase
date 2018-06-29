@@ -23,6 +23,7 @@ public class FriendlyMessage {
     private String photoUrl;
 
     public FriendlyMessage() {
+
     }
 
     public FriendlyMessage(String text, String name, String photoUrl) {

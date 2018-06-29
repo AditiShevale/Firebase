@@ -243,7 +243,7 @@ public class MainActivity extends AppCompatActivity {
                             public void onSuccess(Uri uri) {
 
                                 Uri downloadurl=uri;
-                                Log.d("imagestorage", String.valueOf(uri));
+                                Log.e(TAG, downloadurl.toString());
                                 FriendlyMessage friendlyMessage = new
                                         FriendlyMessage(null,mUsername,
                                         downloadurl.toString());
