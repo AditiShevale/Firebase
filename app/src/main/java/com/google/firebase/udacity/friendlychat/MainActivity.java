@@ -245,8 +245,10 @@ public class MainActivity extends AppCompatActivity {
                                 Uri downloadurl=uri;
                                 Log.d("imagestorage", String.valueOf(uri));
                                 FriendlyMessage friendlyMessage = new
-                                        FriendlyMessage(null,mUsername,downloadurl.toString());
-                                mMessagesDatabaseReference.push().setValue(friendlyMessage);
+                                        FriendlyMessage(null,mUsername,
+                                        downloadurl.toString());
+                                mMessagesDatabaseReference.push()
+                                        .setValue(friendlyMessage);
 
                             }
                         });
