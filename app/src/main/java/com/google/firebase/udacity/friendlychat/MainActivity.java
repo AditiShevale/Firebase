@@ -95,16 +95,17 @@ public class MainActivity extends AppCompatActivity {
         mFirebaseDatabase = FirebaseDatabase.getInstance();
         mFirebaseStorage = FirebaseStorage.getInstance();
 
-        Toast.makeText(this, "Hello", Toast.LENGTH_SHORT).show();
+
         mMessagesDatabaseReference = mFirebaseDatabase.getReference()
                 .child("messages");
 
-
+        Toast.makeText(this, "Hello", Toast.LENGTH_SHORT).show();
 
         mChatPhotosStorageReference = mFirebaseStorage.getReference().child("chat_photos");
 
 
         // Initialize references to views
+
         mProgressBar = (ProgressBar) findViewById(R.id.progressBar);
         mMessageListView = (ListView) findViewById(R.id.messageListView);
         mPhotoPickerButton = (ImageButton) findViewById(R.id.photoPickerButton);
