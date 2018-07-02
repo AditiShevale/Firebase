@@ -34,6 +34,7 @@ public class FriendlyMessage {
 
     public String getText() {
         return text;
+
     }
 
     public void setText(String text) {
